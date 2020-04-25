@@ -1,0 +1,13 @@
+extend ../layout/layout1
+block content
+  h1 Transactions Complete?
+  if(err)
+    each er in err
+      .alert.alert-danger= er
+  form(method="post")
+    .form-group
+      label Book has been paid?
+      select(name="isComplete")
+        option(value=true) Yes
+        option(value=false) No
+    button.btn.btn-primary Send

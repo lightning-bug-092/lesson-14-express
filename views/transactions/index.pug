@@ -1,0 +1,10 @@
+extend ../layout/layout1
+block content
+  h1 Transactions
+  a.badge.badge-primary.mb-3(href="/transactions/create") Create
+  table.table.table-dark
+    each transaction in transactions
+      tr
+        td=transaction.id
+        td
+          a.badge.badge-primary(href="./transactions/"+transaction.id+"/complete") complete
